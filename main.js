@@ -30,7 +30,16 @@ console.log("-------------------------->")
 console.log("A partir de acá, empieza el simulador----------->")
 
 function seleccion(){
-    console.log("Bienvenido a Multicines, más que un cine, una forma de entretenimiento")
+    console.log("Bienvenido a Multicines, más que un cine, una forma de entretenimiento");
+    console.log("------------------------------->");
+    console.log("El costo de las entradas es el siguiente: ");
+    console.log("En formato 2D: " + costoEntradas2D[0] + " pesos ");
+    console.log("En formato 3D: " + costoEntradas3D[0] + " pesos ");
+    console.log("En formato 4D: " + costoEntradas4D[0] + " pesos ");
+    console.log("En formato Imax: " + costoEntradasImax[0] + " pesos ");
+
+
+    console.log("------------------------------->");
 
     console.log("Seleccione lo que desea hacer")
     console.log("1: Ver cartelera de cine")
