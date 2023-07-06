@@ -125,7 +125,8 @@ function verHorario(selectPelicula, cartelera){
             console.log(hora[i]);
         }
     } else {
-        console.log("No ha seleccionado una opción válida. La operacion será cancelada")
+        console.log("No ha seleccionado una opción válida. La operacion será cancelada");
+        verCartelera();
     }
 
     let selectHorario = prompt("Inserte la hora que desea ver la pelicula")
