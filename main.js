@@ -244,7 +244,7 @@ function verPeliculas(cartelera){
     console.log("Tenemos estás peliculas disponibles")
     cartelera.forEach( panel => {
 
-        console.log(panel.opcion + " " +  panel.nombre + " " + panel.formato)
+        console.log("Opcion " + panel.opcion + " : " +  panel.nombre + " " + panel.formato)
     })
     
     let selectPelicula = prompt("Seleccione la pelicula que busca")
