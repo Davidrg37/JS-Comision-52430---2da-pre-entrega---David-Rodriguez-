@@ -1,7 +1,7 @@
 console.log("Creaciones de Array e objetos -------------------------->")
 
 console.log(cartelera);
-console.log(costoEntradas2D[0]);
+console.log(costoEntradas2D);
 console.log(costoEntradas3D);
 console.log(costoEntradas4D);
 console.log(costoEntradasImax);
@@ -33,7 +33,7 @@ function seleccion(){
     console.log("Bienvenido a Multicines, más que un cine, una forma de entretenimiento");
     console.log("------------------------------->");
     console.log("El costo de las entradas es el siguiente: ");
-    console.log("En formato 2D: " + numeral(costoEntradas2D[0]).formato(",") + " pesos ");
+    console.log("En formato 2D: " + costoEntradas2D[0] + " pesos ");
     console.log("En formato 3D: " + costoEntradas3D[0] + " pesos ");
     console.log("En formato 4D: " + costoEntradas4D[0] + " pesos ");
     console.log("En formato Imax: " + costoEntradasImax[0] + " pesos ");
