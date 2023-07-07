@@ -68,81 +68,30 @@ function seleccion(){
 
 function verCartelera(cartelera){
     console.log("--------------------->")
-    cartelera.forEach( panel => {
+    cartelera.forEach( panel => { // Aca presenta las opciones con opcion y nombre//
         console.log("Opcion " + panel.opcion + " : " + panel.nombre)
     })
     
-    let selectPelicula = prompt("Seleccione la opcion de la película que desea ver")
-    if (selectPelicula == 0 || selectPelicula>10 || selectPelicula == "ESC"){
-        console.log("No ha seleccionado una opción válida. La operacion será cancelada")
-    } else if (selectPelicula >= 1 && selectPelicula <= 10){
-        verHorario(selectPelicula, cartelera);
-    }
-}
+    let selectPelicula = Number(prompt("Seleccione la opción de la película que desea ver"))
 
-function verHorario(selectPelicula, cartelera){
+    const pelicula = cartelera.find( peli => peli.opcion === selectPelicula)
+    // Esto lo hacemos para que el resultado de usar find se almacene en pelicula. Con find, le decimos que peli se alimenta de peli.opcion (que va ser selectpelicula). De esta forma sabremos si la seleccion es igual a opcion//
     console.log("--------------------->")
-    seleccion = selectPelicula - 1;
-    if(selectPelicula == 1 || selectPelicula == "Air"){
-        let hora = Object.values(peli1);
-        for(let i = 3; i<=5;i+=1){
-            console.log(hora[i]);
-        }
-    } else if (selectPelicula == 2 || selectPelicula == "Elementos") {
-        let hora = Object.values(peli2);
-        for(let i = 3; i<=11;i+=1){
-            console.log(hora[i]);
-        }
-    } else if (selectPelicula == 3 || selectPelicula == "The Flash") {
-        let hora = Object.values(peli3);
-        for(let i = 3; i<=8;i+=1){
-            console.log(hora[i]);
-        }
-    } else if (selectPelicula == 5 || selectPelicula == "Guardianes de la Galaxia" || selectPelicula == "Guardianes") {
-        let hora = Object.values(peli5);
-        for(let i = 3; i<=8;i+=1){
-            console.log(hora[i]);
-        }
-    } else if (selectPelicula == 4 || selectPelicula == "Evil Dead") {
-        let hora = Object.values(peli4);
-        for(let i = 3; i<=8;i+=1){
-            console.log(hora[i]);
-        }
-    } else if (selectPelicula == 6 || selectPelicula == "Transformers") {
-        let hora = Object.values(peli6);
-        for(let i = 4; i<=9;i+=1){
-            console.log(hora[i]);
-        }
-    } else if (selectPelicula == 7 || selectPelicula == "Indiana Jones") {
-        let hora = Object.values(peli7);
-        for(let i = 4; i<=12;i+=1){
-            console.log(hora[i]);
-        }
-    } else if (selectPelicula == 8 || selectPelicula == "Boogeyman") {
-        let hora = Object.values(peli8);
-        for(let i = 4; i<=9;i+=1){
-            console.log(hora[i]);
-        }
-    } else if (selectPelicula == 9 || selectPelicula == "Mario Bross" || selectPelicula == "Mario" || selectPelicula == "Mario Bros") {
-        let hora = Object.values(peli9);
-        for(let i = 4; i<=12;i+=1){
-            console.log(hora[i]);
-        }
-    } else if (selectPelicula == 10 || selectPelicula == "Hazme el favor") {
-        let hora = Object.values(peli10);
-        for(let i = 4; i<=6;i+=1){
-            console.log(hora[i]);
-        }
-    } else {
-        console.log("No ha seleccionado una opción válida. La operacion será cancelada");
-        verCartelera();
+    console.log(" Funciones disponibles: ")
+    for (let hora in pelicula.horarios){
+        let p = 0;
+        let x = p+=1;
+        //Si select pelicula/peli opcion existe en el objeto que esta en el array, buscamos hora (que es lo que precisamos) en el array pelicula.horarios[hora]//
+        console.log(pelicula.horarios[hora])
     }
 
-    let selectHorario = prompt("Inserte la hora que desea ver la pelicula")
-    seleccionEntradas(selectHorario);
+    let selectHorario = prompt("Inserte la hora de la funcion que desea asistir");
+    seleccionEntradas(selectPelicula, selectHorario);
+    
 }
 
-function seleccionEntradas(selectHorario){
+function seleccionEntradas(selectPelicula, selectHorario){
+
     let totalEntradas = 0;
     let entradas = prompt("Inserte la cantidad de entradas que desea")
 
@@ -247,8 +196,7 @@ function verPeliculas(cartelera){
         console.log("Opcion " + panel.opcion + " : " +  panel.nombre + " " + panel.formato)
     })
     
-    let selectPelicula = prompt("Seleccione la pelicula que busca")
-        verHorario(selectPelicula, cartelera);
+    verCartelera(cartelera);
 }
 
 seleccion();

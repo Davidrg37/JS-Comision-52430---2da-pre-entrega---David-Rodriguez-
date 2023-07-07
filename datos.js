@@ -2,134 +2,163 @@ let peli1 = {
     nombre: "Air",
     categoria : "Drama",
     formato: "2D",
-    hora1: "17:30 2D subtitulado",
-    hora2: "19:30 2D subtitulado",
-    hora3: "21:00 2D subtitulado;",
-    opcion: "1"
+    horarios: {
+        hora1: "17:30 2D subtitulado",
+        hora2: "19:30 2D subtitulado",
+        hora3: "21:30 2D subtitulado",
+    },
+    opcion: 1,
+    precio2D: 4000,
+
 }
 
 let peli2 = {
     nombre: "Elementos",
     categoria : "Para todo publico",
     formato: "2D, 4D, Imax",
-    hora4: "17:30 2D en español;",
-    hora5: "19:30 2D en español;",
-    hora6: "21:30 2D en español;",
-    hora7: "17:45 4D en español;",
-    hora8: "19:45 4D en español;",
-    hora9: "21:45 4D en español;",
-    hora10: "17:55 Imax en español;",
-    hora11: "19:55 Imax en español;",
-    hora12: "21:20 Imax en español;",
-    opcion: "2"
+    horarios :{
+        hora1: "17:30 2D en español",
+        hora2: "19:30 2D en español",
+        hora3: "21:30 2D en español",
+        hora4: "17:45 4D en español",
+        hora5: "19:45 4D en español",
+        hora6: "21:45 4D en español",
+        hora7: "17:55 Imax en español",
+        hora8: "19:55 Imax en español",
+        hora9: "21:20 Imax en español",
+    },
+    opcion: 2,
+    precios : {
+        precio3D: 3000,
+        precio4D: 4000,
+        precioImax: 6000,
+    }
 }
 
 let peli3 = {
     nombre: "The Flash",
     categoria : "Ciencia ficcion",
     formato: "2D, 3D",
-    hora13: "17:30 2D subtitulada",
-    hora14: "19:30 2D subtitulada;",
-    hora15: "21:30 2D subtitulada;",
-    hora16: "17:40 3D en español;",
-    hora17: "19:40 3D en español;",
-    hora18: "21:40 3D en español;",
-    opcion: "3",
+    horarios: {
+        hora1: "17:30 2D subtitulada",
+        hora2: "19:30 2D subtitulada",
+        hora3: "21:30 2D subtitulada;",
+        hora4: "17:40 3D en español",
+        hora5: "19:40 3D en español",
+        hora6: "21:40 3D en español",
+    },
+
+    opcion: 3,
 }
 
 let peli4 = {
     nombre: "Evil Dead",
     categoria : "Terror",
     formato: "2D, Imax",
-    hora19: "17:30 2D subtitulada",
-    hora20: "19:30 2D subtitulada;",
-    hora21: "21:30 2D subtitulada;",
-    hora22: "19:55 Imax subtitulada;",
-    hora23: "21:55 Imax subtitulada;",
-    hora24: "23:10 Imax subtitulada;",
-    opcion: "4",
+    horarios: {
+        hora1: "17:30 2D subtitulada",
+        hora2: "19:30 2D subtitulada",
+        hora3: "21:30 2D subtitulada",
+        hora4: "19:55 Imax subtitulada",
+        hora5: "21:55 Imax subtitulada",
+        hora6: "23:10 Imax subtitulada",
+    },
+    opcion: 4,
 }
 
 let peli5 = {
     nombre: "Guardianes de la Galaxia",
     categoria : "Ciencia ficcion",
     formato: "3D, 4D",
-    hora25: "17:40 3D en español;",
-    hora26: "19:40 3D en español;",
-    hora27: "21:40 3D en español;",
-    hora28: "17:45 4D en español;",
-    hora29: "19:45 4D en español;",
-    hora30: "21:45 4D en español;",
-    opcion: "5",
+    horarios : {
+        hora1: "17:40 3D en español",
+        hora2: "19:40 3D en español",
+        hora3: "21:40 3D en español",
+        hora4: "17:45 4D en español",
+        hora5: "19:45 4D en español",
+        hora6: "21:45 4D en español",
+        },
+    opcion: 5,
 }
 
 let peli6 = {
-    opcion: "6",
+    opcion: 6,
     nombre: "Transformes",
     categoria : "Ciencia ficcion",
     formato: "2D, 4D",
-    hora31: "17:30 2D subtitulada",
-    hora32: "19:30 2D subtitulada;",
-    hora33: "21:30 2D subtitulada;",
-    hora34: "17:45 4D en español;",
-    hora35: "19:45 4D en español;",
-    hora36: "21:45 4D en español;",
+    horarios: {
+        hora1: "17:30 2D subtitulada",
+        hora2: "19:30 2D subtitulada",
+        hora3: "21:30 2D subtitulada",
+        hora4: "17:45 4D en español",
+        hora5: "19:45 4D en español",
+        hora6: "21:45 4D en español",
+        },
 }
 
 let peli7 = {
-    opcion: "7",
+    opcion: 7,
     nombre: "Indiana Jones",
     categoria : "Accion",
     formato: "2D, 3D, Imax",
-    hora37: "17:30 2D subtitulada",
-    hora38: "19:30 2D subtitulada;",
-    hora39: "21:30 2D subtitulada;",
-    hora40: "17:40 3D en español;",
-    hora41: "19:40 3D en español;",
-    hora42: "21:40 3D en español;",
-    hora43: "17:55 Imax en español;",
-    hora44: "19:55 Imax en español;",
-    hora45: "21:20 Imax en español;",
+    horarios : {
+        hora1: "17:30 2D subtitulada",
+        hora2: "19:30 2D subtitulada",
+        hora3: "21:30 2D subtitulada",
+        hora4: "17:40 3D en español",
+        hora5: "19:40 3D en español",
+        hora6: "21:40 3D en español",
+        hora7: "17:55 Imax en español",
+        hora8: "19:55 Imax en español",
+        hora9: "21:20 Imax en español",
+    }
 }
 
 let peli8 = {
-    opcion: "8",
+    opcion: 8,
     nombre: "Boogeyman",
     categoria : "Terror",
     formato: "2D, Imax",
-    hora46: "17:30 2D subtitulada",
-    hora47: "19:30 2D subtitulada;",
-    hora48: "21:30 2D subtitulada;",
-    hora49: "19:45 Imax subtitulada;",
-    hora50: "21:45 Imax subtitulada;",
-    hora51: "23:00 Imax subtitulada;",
+    horarios: {
+        hora1: "17:30 2D subtitulada",
+        hora2: "19:30 2D subtitulada",
+        hora3: "21:30 2D subtitulada",
+        hora4: "19:45 Imax subtitulada",
+        hora5: "21:45 Imax subtitulada",
+        hora6: "23:00 Imax subtitulada",
+    }
 }
 
 let peli9 = {
-    opcion: "9",
+    opcion: 9,
     nombre: "Mario Bros",
     categoria : "Para todo publico",
     formato: "2D, 4D, Imax",
-    hora52: "17:30 2D en español;",
-    hora53: "19:30 2D en español;",
-    hora54: "21:30 2D en español;",
-    hora55: "17:45 4D en español;",
-    hora56: "19:45 4D en español;",
-    hora57: "21:45 4D en español;",
-    hora58: "17:55 Imax en español;",
-    hora59: "19:55 Imax en español;",
-    hora60: "21:20 Imax en español;",
+    horarios : {
+        hora1: "17:30 2D en español",
+        hora2: "19:30 2D en español",
+        hora3: "21:30 2D en español",
+        hora4: "17:45 4D en español",
+        hora5: "19:45 4D en español",
+        hora6: "21:45 4D en español",
+        hora7: "17:55 Imax en español",
+        hora8: "19:55 Imax en español",
+        hora9: "21:20 Imax en español",
+    }
 }
 
 let peli10 = {
-    opcion: "10",
+    opcion: 10,
     nombre: "Hazme el favor",
     categoria : "Drama",
     formato: "2D subtitulado",
-    hora61: "17:30 2D subtitulado;",
-    hora62: "19:30 2D subtitulado;",
-    hora63: "21:00 2D subtitulado;",
+    horarios: {
+        hora1: "17:30 2D subtitulado;",
+        hora2: "19:30 2D subtitulado;",
+        hora3: "21:00 2D subtitulado;",
+    },
 }
+
 
 const cartelera = [peli1, peli2, peli3, peli4, peli5, peli6, peli7, peli8, peli9, peli10];
 console.log(peli1.nombre)
@@ -206,3 +235,10 @@ console.log(Object.values(peli1));
 
 // let costoEntradas2D1 = numeral(5000).formato("0,0");
 // console.log(costoEntradas2D1);
+
+// const usuarioEleccion = parseInt(prompt("elija la pelicula"))
+// const pelicula = cartelera.find( peli => peli.opcion === usuarioEleccion)
+
+// for (let hora in pelicula.horarios){
+//     console.log(pelicula.horarios[hora])
+// }
