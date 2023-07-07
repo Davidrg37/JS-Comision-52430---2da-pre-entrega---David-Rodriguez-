@@ -203,3 +203,6 @@ for(const [hora1, value] of Object.entries(peli1)){
 
 // Obejct values //
 console.log(Object.values(peli1));
+
+// let costoEntradas2D1 = numeral(5000).formato("0,0");
+// console.log(costoEntradas2D1);
