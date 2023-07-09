@@ -1,6 +1,7 @@
 console.log("Creaciones de Array e objetos -------------------------->")
 
 console.log(cartelera);
+console.log(funciones);
 console.log(costoEntradas2D);
 console.log(costoEntradas3D);
 console.log(costoEntradas4D);
@@ -33,7 +34,7 @@ function seleccion(){
     console.log("Bienvenido a Multicines, más que un cine, una forma de entretenimiento");
     console.log("------------------------------->");
     console.log("El costo de las entradas es el siguiente: ");
-    console.log("En formato 2D: " + costoEntradas2D[0] + " pesos ");
+
     console.log("En formato 3D: " + costoEntradas3D[0] + " pesos ");
     console.log("En formato 4D: " + costoEntradas4D[0] + " pesos ");
     console.log("En formato Imax: " + costoEntradasImax[0] + " pesos ");
@@ -50,6 +51,10 @@ function seleccion(){
     let selectOpc = prompt("Ingrese la opcion de lo que desea hacer")
     switch(selectOpc){
         case "1":
+            cartelera.forEach( panel => { // Aca presenta las opciones con opcion y nombre//
+                console.log("Opcion " + panel.opcion + " : " + panel.nombre)
+            })
+            
             verCartelera(cartelera);
             console.log("--------------------->")
             break;
@@ -68,10 +73,6 @@ function seleccion(){
 
 function verCartelera(cartelera){
     console.log("--------------------->")
-    cartelera.forEach( panel => { // Aca presenta las opciones con opcion y nombre//
-        console.log("Opcion " + panel.opcion + " : " + panel.nombre)
-    })
-    
     let selectPelicula = Number(prompt("Seleccione la opción de la película que desea ver"))
 
     const pelicula = cartelera.find( peli => peli.opcion === selectPelicula)
@@ -85,30 +86,25 @@ function verCartelera(cartelera){
         console.log(pelicula.horarios[hora])
     }
 
-    let selectHorario = prompt("Inserte la hora de la funcion que desea asistir");
-    seleccionEntradas(selectPelicula, selectHorario);
+    seleccionEntradas();
     
 }
 
-function seleccionEntradas(selectPelicula, selectHorario){
+function seleccionEntradas(){
 
-    let totalEntradas = 0;
-    let entradas = prompt("Inserte la cantidad de entradas que desea")
+    let selectHorario = prompt("Inserte la hora de la funcion que desea asistir");
 
-    if(selectHorario == "17:30" || selectHorario == "19:30" || selectHorario == "21:30"){
-        totalEntradas = Number(costoEntradas2D.map (costoEntradas2D => costoEntradas2D * entradas)); 
-    } else if(selectHorario == "17:45" || selectHorario == "19:45" || selectHorario == "21:45"){
-        totalEntradas = Number(costoEntradas4D.map (costoEntradas4D => costoEntradas4D * entradas)); 
-    } else if(selectHorario == "17:55" || selectHorario == "19:55" || selectHorario == "21:55" || selectHorario == "23:10" || selectHorario == "21:20" || selectHorario == "23"){
-        totalEntradas = Number(costoEntradasImax.map (costoEntradasImax => costoEntradasImax * entradas)); 
-    } else if(selectHorario == "17:40" || selectHorario == "19:40" || selectHorario == "21:40"){
-        totalEntradas = Number(costoEntradas3D.map (costoEntradas3D => costoEntradas3D * entradas)); 
-    } else {
-        console.log("No selecciono un horario válido. La operación será cancelada")
-    }
+    const horario = funciones.find( funcion => funcion.id === selectHorario);
+    console.log("Usted selecciono la funcion de las " + selectHorario);
+    console.log("El costo de esta funcion es: " + horario.precio);
 
-    console.log("El total de las entradas es: " + totalEntradas + " de pesos");
-    // console.log(typeof totalEntradas);
+    console.log("--------------------->")
+
+    let entradas = Number(prompt("Inserte la cantidad de entradas que desea"))
+    let totalEntradas = Number(horario.precio * entradas);
+
+    console.log("El total de las entradas es: " + totalEntradas + " de pesos.")
+
     menuComida(totalEntradas)
 }
 
@@ -128,10 +124,6 @@ function menuComida(totalEntradas){
         case "No":
             console.log("Espere mientras calculamos el total a pagar");
             totalPagar(totalEntradas);
-            // console.log("El total a pagar es: " + totalEntradas);
-            // if(totalEntradas>=0){
-            //     console.log("Su pedido ha sido realizado. Acerquese a las cajas a pagar, o escoga la opción de pagar al finalizar la operación, introduciendo el código que sale en pantalla")
-            // } 
             break;
         default:
             console.log("--------------------->")
@@ -141,20 +133,14 @@ function menuComida(totalEntradas){
 function seleccionComida (totalEntradas){
     console.log("--------------------->")
     let seleccionComida = Number(prompt("Indique el numero del combo que desea"))
-    let cantidadComida = Number(prompt("Cuantos combos desea agregar"))
-    let totalComida = 0;
 
-    if(seleccionComida == 1 && cantidadComida>0){
-        Object.entries(menu1).forEach(([precio, values]) => {totalComida = Number( (values*cantidadComida))})    
-    } else if (seleccionComida == 2 && cantidadComida>0){
-        Object.entries(menu2).forEach(([precio, values]) => {totalComida = Number( (values*cantidadComida))}) 
-    } else if(seleccionComida == 3 && cantidadComida>0){
-        Object.entries(menu3).forEach(([precio, values]) => {totalComida = Number( (values*cantidadComida))}) 
-    } else if (seleccionComida == 4 && cantidadComida>0){
-        Object.entries(menu4).forEach(([precio, values]) => {totalComida = Number( (values*cantidadComida))}) 
-    } else if(seleccionComida == 5 && cantidadComida>0){
-        Object.entries(menu5).forEach(([precio, values]) => {totalComida = Number( (values*cantidadComida))}) 
-    }
+    const comboSeleccion = combos.find( menu => menu.opcion === seleccionComida)
+
+    console.log("Selecciono: "+ comboSeleccion.nombre);
+
+    let cantidadComida = Number(prompt("Cuantos combos desea agregar"))
+
+    let totalComida = Number(comboSeleccion.precio * cantidadComida);
 
     console.log("Total a pagar por comida: " + totalComida + " pesos");
     // console.log(typeof totalComida);
@@ -164,8 +150,7 @@ function seleccionComida (totalEntradas){
 }
 
 function totalPagar(totalEntradas, totalComida){
-    // console.log(typeof totalComida);
-    // console.log(typeof totalEntradas);
+
     let suma = (a, b)=> a + b;
     let totalTodo = suma = (a, b) => a + b;
 
@@ -196,7 +181,15 @@ function verPeliculas(cartelera){
         console.log("Opcion " + panel.opcion + " : " +  panel.nombre + " " + panel.formato)
     })
     
-    verCartelera(cartelera);
+    let consulta2 = prompt("Desea continuar a seleccionar pelicula? ")
+
+    if(consulta2 == "Si"){
+        verCartelera(cartelera);
+        console.log("--------------------->")
+    } else if (consulta2 == "No" || consulta2 =="ESC"){
+        console.log("Operacion cancelada. Cualquier duda, reinicie de nuevo")
+    }
+    
 }
 
 seleccion();

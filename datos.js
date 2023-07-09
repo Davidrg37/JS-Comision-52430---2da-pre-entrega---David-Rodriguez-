@@ -170,75 +170,106 @@ const costoEntradas3D = [4000];
 const costoEntradas4D = [6000];
 const costoEntradasImax = [7500];
 
+let funcion1 = {
+    id: "17:30",
+    precio : 3000,
+}
+
+let funcion2 = {
+    id: "19:30",
+    precio : 3000,
+}
+
+let funcion3 = {
+    id: "21:30",
+    precio : 3000,
+}
+
+let funcion4 = {
+    id: "17:45",
+    precio: 6000,
+}
+
+let funcion5 = {
+    id: "19:45",
+    precio: 6000,
+}
+
+let funcion6 = {
+    id: "21:45",
+    precio: 6000,
+}
+
+let funcion7 = {
+    id: "17:55",
+    precio: 7500,
+}
+
+let funcion8 = {
+    id: "19:55",
+    precio: 7500,
+}
+
+let funcion9 = {
+    id: "21:20",
+    precio: 7500,
+}
+
+let funcion10 ={
+    id: "17:40",
+    precio: 4000,
+}
+
+let funcion11 ={
+    id: "19:40",
+    precio: 4000,
+}
+
+let funcion12 = {
+    id: "21:40",
+    precio: 4000,
+}
+
+let funcion13 = {
+    id: "23",
+    precio: 4000,
+}
+
+let funcion14 = {
+    id: "23:10",
+    precio: 4000,
+}
+
+const funciones = [funcion1, funcion2, funcion3, funcion4, funcion5, funcion6, funcion7, funcion8, funcion9, funcion10, funcion11, funcion12, funcion13, funcion14];
 
 let menu1 = {
-    opcion: "1",
+    opcion: 1,
     nombre: "Combo 1 = Pop y Soda chico",
     precio : 10000,
 }
 
 let menu2 = {
-    opcion: "2",
+    opcion: 2,
     nombre: "Combo 2 = Pop y Soda mediano",
     precio : 13000,
 }
 
 let menu3 = {
-    opcion: "3",
+    opcion: 3,
     nombre: "Combo 3 = Pop y Soda grande",
     precio : 16000,
 }
 
 let menu4 = {
-    opcion: "4",
+    opcion: 4,
     nombre: "Combo 4 = Pop grande y 2 sodas medianos",
     precio : 18000,
 }
 
 let menu5 = {
-    opcion: "5",
+    opcion: 5,
     nombre: "Combo 5 = 2 Pop grande y 2 sodas medianos",
     precio : 20000,
 }
 
 const combos = [menu1, menu2, menu3, menu4, menu5];
-Object.entries(menu1).forEach(([precio, values]) => {console.log(values*5)});
-for(const [precio, values] of Object.entries(menu1)){console.log(values*5)};
-
-//Object keys //
-let hora = Object.keys(peli1);
-for(let i = 1; i<=3; i+=1){
-    let hora1 = hora[i];
-    console.log(peli1[hora1]);
-}
-// Obejct values //
-let hora1 = Object.values(hora);
-for(let i = 1; i<=3; i+=1){
-    console.log(hora1);
-}
-
-//for in//
-for(let hora in peli1){
-    console.log(peli1[hora]);
-}
-
-//Entries & for each//
-Object.entries(peli1).forEach(([hora1, value]) => console.log(value));
-
-//Entries & forOF//
-for(const [hora1, value] of Object.entries(peli1)){
-    console.log(value)
-}
-
-// Obejct values //
-console.log(Object.values(peli1));
-
-// let costoEntradas2D1 = numeral(5000).formato("0,0");
-// console.log(costoEntradas2D1);
-
-// const usuarioEleccion = parseInt(prompt("elija la pelicula"))
-// const pelicula = cartelera.find( peli => peli.opcion === usuarioEleccion)
-
-// for (let hora in pelicula.horarios){
-//     console.log(pelicula.horarios[hora])
-// }
